@@ -1,0 +1,65 @@
+<!-- 
+
+
+ -->
+
+
+<table hidden={hiddenTable}>
+  <thead>
+    <th>
+      <td>Наименование</td>
+      <td>Количество</td>
+      <td>Цена за единицу</td>
+      <td>Цена за комплект</td>
+    </th>
+  </thead> 
+  <tbody>
+    {#each data as {name, link, coast, price}}
+    <tr>
+      <td>
+        <a href={link}>{name}</a>
+      </td>
+      <td>{coast}</td>
+      <td>{price}</td>
+      <td>{coast * price}</td>
+    </tr>
+    {/each}
+    <tr>
+      <td>Количество предметов: {data.length - 1}</td>
+      <td>Общая стоимость: {allPrice}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<script>
+/**
+ * заменить Пайка
+ */
+
+
+import List from 'List.html';
+import allData from '../../data/allData.json';
+
+	export default {
+    data() {
+      return {
+        allPrice = 0,
+        hiddenTable: true
+      }
+    },		
+	
+// ,
+// getAllPriceFor () {
+// 	let priceFor;
+// 	.map( (element) => {
+// 		priceFor += element.price;
+// 	})
+}
+});
+
+
+
+
+</script>
